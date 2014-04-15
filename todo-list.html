@@ -1,0 +1,23 @@
+<input type="text" id="TextBox"/> 
+<button onclick="myFunction()">Add</button>
+<table id="myTable"></table>
+<script>
+function myFunction()
+{
+var table = document.getElementById("myTable");
+var row = table.insertRow(0);
+var cell = row.insertCell(0);
+
+var text = document.getElementById('TextBox').value;
+ 
+  var element1 = document.createElement("input");
+  element1.type = "text";
+  element1.value = text;
+
+element1.onfocus = function() {
+        table.deleteRow(this.parentNode.parentNode.rowIndex);
+  }
+  cell.appendChild(element1);
+
+}
+</script>
